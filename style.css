@@ -1,0 +1,179 @@
+/*// BASE STYLES //*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass,
+.sky,
+.road {
+  position: relative;
+}
+
+.sky {
+  height: 40%;
+  background: rgb(82, 90, 94);
+}
+
+.grass {
+  height: 30%;
+  background: seagreen;
+  position: relative;
+  z-index: -2;
+}
+
+
+.road {
+  position: relative;
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+  z-index: -2;
+}
+
+.lines {
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  z-index: -1;
+}
+
+/*/
+/ ELEMENTS TO ANIMATE //*/
+@keyframes sliding-cloud {
+  from {
+    transform: translateX(500%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/*// KEYFRAMES //*/
+
+#cloud {
+  animation-name: sliding-cloud;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes s-luigi {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+#luigi {
+  padding-bottom: 80px;
+  /* animation-name: s-luigi;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-direction: linear; */
+
+  animation: 2s ease 0s 1 normal forwards running s-luigi;
+  z-index: 1;
+}
+@keyframes s-mario {
+  from {
+    transform: translateX(1000%)  rotateY(180deg);
+    
+  }
+  to 
+  {
+    /* animation-fill-mode: forwads; */
+    transform: rotateY(181deg) translateX(-200%);
+  }
+}
+
+#mario {
+  padding-bottom: 80px;
+  transform: translate(0,0,0) rotateZ(0);
+  /* animation-name: s-mario;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-direction: linear; */
+  z-index: 2;
+
+  animation: 2s ease 0s 1 normal forwards running s-mario;
+  
+}
+
+
+
+#blast{
+  opacity: 0;
+  animation-name: blast;
+  animation-fill-mode: forwads;
+  animation-duration: 4s;
+  padding-bottom: 70px;
+  padding-left: 80px;
+  z-index: 3;
+  animation-iteration-count: 1;
+}
+
+@keyframes blast{
+0%{opacity: 0;}
+40%{opacity: 0;}
+50%{opacity: 1;}
+60%{opacity: 1;}
+100%{opacity: 0;}
+}
+
+#ambulance{
+  position: absolute;
+  bottom: 5px;
+  animation-name: ambulance;
+  padding-bottom: 30px;
+  transform: translateX(-300%);
+  z-index: 1000;
+
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ambulance{
+  from{
+    transform: translateX(-300%);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fly{
+  0%{
+    transform: translate(0,0,0) rotateY(0);
+  }
+  100%{
+    transform: translate(100px,100px,0) rotateY(80deg);
+  }
+}
+#pole{
+  padding-left: 250px;
+  padding-top: 50px;
+}
+#quote{
+padding-left: 50px;
+padding-top: 500px;
+  animation-name: quote;
+  z-index: 1;
+}
